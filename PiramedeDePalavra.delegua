@@ -1,0 +1,30 @@
+var palavra = leia()
+var tamanho = palavra.tamanho()
+
+para (var i = 0; i < tamanho; i = i + 1) {
+    var letras = palavra.fatiar(0, i + 1)
+
+    // Quebra a string em caracteres separados e junta com espaço
+    var letrasSeparadas = ""
+    para (var j = 0; j <= i; j = j + 1) {
+        letrasSeparadas = letrasSeparadas + palavra[j]
+        se (j < i) {
+            letrasSeparadas = letrasSeparadas + " "
+        }
+    }
+
+    // Calcula espaços à esquerda para centralizar
+    var larguraLinha = letrasSeparadas.tamanho()
+    var larguraTotal = (2 * tamanho) - 1
+    var espacosAntes = (larguraTotal - larguraLinha) / 2
+
+    var linha = ""
+
+    para (var k = 0; k < espacosAntes; k = k + 1) {
+        linha = linha + " "
+    }
+
+    linha = linha + letrasSeparadas
+
+    escreva(linha)
+}
